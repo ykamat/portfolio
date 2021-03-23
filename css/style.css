@@ -129,8 +129,11 @@ p{
   text-align: center;
 }
 .gallery > img{
-  width: 95%;
+  width: 90%;
   border: 5px solid black;
+
+  display: block;
+  margin: 0 auto;
 }
 
 .gallery > p{
