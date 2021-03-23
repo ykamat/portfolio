@@ -1,0 +1,195 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: whitesmoke;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 30px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2{
+  font-size: 25px;
+  line-height: 1.5;
+}
+
+nav li{
+  display:inline;
+  padding-left: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav{
+  background-color:#EC1D24;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+footer{
+  background-color: #EC1D24;
+  font-family: Helvetica, times;
+  color: white;
+  padding-top: 20px;
+  text-align: center;
+}
+
+header p{
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+nav a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+nav a:hover{
+    color: goldenrod;
+    text-decoration: underline;
+  }
+  
+p{
+  font-family: Helvetica, sans-serif;
+  }
+
+/* img{
+    width: 100vw;
+} */
+
+/*History*/
+
+.container{
+    display: grid;
+    grid-template-columns: 2fr auto 2fr;
+    grid-template-rows: auto auto auto auto;
+    grid-row-gap: 20px;
+  }
+
+.p1, .p3{
+    grid-column: 1;
+  }
+
+.p2, .p4{
+    grid-column: 3;
+  }
+
+.p1-image, .p2-image, .p3-image, .p4-image{
+    grid-column: 1 / -1;
+    max-height: 450px;
+    overflow:hidden;
+    justify-content: center;
+  }
+
+.p1, .p1-image{
+    grid-row: 1 / span 1;
+}
+
+.p2, .p2-image{
+    grid-row: 2 / span 1;
+}
+
+.p3, .p3-image{
+    grid-row: 3 / span 1;
+}
+
+.p4, .p4-image{
+    grid-row: 4 / span 1;
+}
+
+.text{
+    background-color: rgb(245, 245, 245, 0.5);
+    font-family: Helvetica, sans-serif;
+    border: 5px solid black;
+    padding: 25px;
+    /*Your code here:*/
+    align-self: center;
+  }
+
+/*Locations*/
+
+.locations-text{
+  text-align: center;
+}
+.gallery > img{
+  width: 95%;
+  border: 5px solid black;
+}
+
+.gallery > p{
+  text-align: center;
+  padding-top: 10px;
+}
+
+.appears{
+  font-size: small;
+  padding-bottom: 10px;
+}
+  /* @media all and (min-width: 880px){
+
+    img{
+       width:100%;
+    }
+
+    nav{
+      padding: 30px 0px;
+      text-align: right;
+      align-self: center;
+    }
+
+    .container{
+      display: grid;
+      grid-template-columns: 350px 350px 350px 350px;
+      grid-template-rows: 200px 200px 200px 200px;
+      grid-template-areas: 
+        ". . p1-image p1"
+        "p2 p2-image . ."
+        ". . p3-image p3"
+        "p4 p4-image . .";
+    }
+
+    .p1-image { grid-area: p1-image; }
+    .p1 { grid-area: p1; }
+    .p2-image { grid-area: p2-image; }
+    .p2 { grid-area: p2; }
+
+    .p3-image { grid-area: p3-image; }
+    .p3 { grid-area: p3; }
+    .p4-image { grid-area: p4-image; }
+    .p4 { grid-area: p4; }
+  } */
+
+  
+
+@media screen and (prefers-reduced-motion: reduce){
+    html{
+        scroll-behavior: auto; /* Removes scroll animation */
+    }
+
+    .skip a{
+      -webkit-transition: none; /* sets to default setting */
+      transition: none;        /* sets to default setting */
+     }
+
+    /*Turn off parallax*/
+    header{
+      background-attachment: initial;
+    }
+}
