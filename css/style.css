@@ -13,7 +13,7 @@ body{
 h1{
   font-size: 30px;
   line-height: 1;
-  padding: 50px 0;
+  padding: 30px 10px;
   text-align: center;
 }
 
@@ -24,8 +24,8 @@ h2{
 
 nav li{
   display:inline;
-  padding-left: 10px;
-
+  /* padding-left: 10px; */
+  padding-bottom: 2.5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,8 +43,8 @@ nav{
 footer{
   background-color: #EC1D24;
   font-family: Helvetica, times;
-  color: white;
-  padding-top: 20px;
+  color: black;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -65,15 +65,21 @@ nav a:hover{
     color: goldenrod;
     text-decoration: underline;
   }
-  
+
 p{
-  font-family: Helvetica, sans-serif;
+  font-family: 'Roboto Condensed', Helvetica, sans-serif;
+  padding: 0px 10px;
   }
 
-/* img{
-    width: 100vw;
-} */
+/* Index */
 
+.home-image > img{
+  width: 100%;
+}
+
+.home-text p{
+  text-align: center;
+}
 /*History*/
 
 .container{
@@ -96,6 +102,9 @@ p{
     max-height: 450px;
     overflow:hidden;
     justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
   }
 
 .p1, .p1-image{
@@ -136,7 +145,7 @@ p{
   margin: 0 auto;
 }
 
-.gallery > p{
+.gallery p{
   text-align: center;
   padding-top: 10px;
 }
@@ -144,6 +153,62 @@ p{
 .appears{
   font-size: small;
   padding-bottom: 10px;
+}
+
+/* Characters */
+.heroes-text{
+  text-align: center;
+}
+
+.heroes-text p{
+  padding: 10px 10px;
+}
+
+/* Heroes */
+.heroes-text{
+  text-align: center;
+}
+
+.heroes-text p{
+  padding: 10px 10px;
+}
+
+/* Villains */
+.villains-text{
+  text-align: center;
+}
+
+.villains-text p{
+  padding: 10px 10px;
+}
+
+.villains-list h2{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.villains-list p{
+  text-align: center;
+  padding: 10px;
+}
+
+.villains-list img{
+  width: 75%;
+
+  display: block;
+  margin: 0 auto;
+}
+
+.loki-img{
+  border: green solid 5px;
+}
+
+.ultron-img{
+  border: slategray solid 5px;
+}
+
+.thanos-img{
+  border: purple solid 5px;
 }
   /* @media all and (min-width: 880px){
 
