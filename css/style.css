@@ -3,7 +3,7 @@ html{
 }
 
 body{
-  background-color: whitesmoke;
+  background-color: beige;
   font-family: Helvetica, sans-serif;
   font-size: 18px;
   margin: 0;
@@ -56,7 +56,6 @@ header p{
 }
 
 nav a{
-    /* color: black; */
     color: #EC1D24;
     font-weight: bold;
     text-decoration: none;
@@ -72,14 +71,34 @@ p{
   padding: 0px 10px;
   }
 
-.currpage{
+.skip a{
+    background: #EC1D24;
+    left: 0;
+    padding: 7px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+  
+    /*Your code here*/
+    position: absolute;
+    background-color: beige;
+    top: -50px;
+  }
+
+.skip a:focus{
+    /*Your code here*/
+    top: 10px;
+    position: static;
+  }
+/* .currpage{
   background-color: #EC1D24;
-}
+} */
 
 .currpage a{
-  color: black;
+  /* color: black; */
+  padding: 5px;
+  border: #EC1D24 5px solid;
   /* animation: grow-shrink 2s infinite; */
-  
 }
 
 @-webkit-keyframes grow-shrink{
@@ -98,12 +117,21 @@ p{
 
 /* Index */
 
-.home-image > img{
-  width: 100%;
+.home-image img{
+  width: 95%;
+  border: black 3px solid; 
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+}
+
+.home-text{
+  padding: 20px 0px;
 }
 
 .home-text p{
   text-align: center;
+  padding: 10px 7.5px;
 }
 
 /*History*/
@@ -185,15 +213,6 @@ p{
   padding-bottom: 10px;
 }
 
-/* Characters */
-.heroes-text{
-  text-align: center;
-}
-
-.heroes-text p{
-  padding: 10px 10px;
-}
-
 /* Heroes */
 .heroes-text{
   text-align: center;
@@ -201,6 +220,11 @@ p{
 
 .heroes-text p{
   padding: 10px 10px;
+}
+
+.villain_links {
+  color: maroon;
+  text-decoration: maroon underline solid;
 }
 
 /* Villains */
@@ -231,14 +255,27 @@ p{
 
 .loki-img{
   border: green solid 5px;
+  border-radius: 10px;
 }
 
 .ultron-img{
   border: slategray solid 5px;
+  border-radius: 10px;
+}
+
+.killmonger-img{
+  border: goldenrod solid 5px;
+  border-radius: 10px;
+}
+
+.hela-img{
+  border: silver solid 5px;
+  border-radius: 10px;
 }
 
 .thanos-img{
   border: purple solid 5px;
+  border-radius: 10px;
 }
   /* @media all and (min-width: 880px){
 
