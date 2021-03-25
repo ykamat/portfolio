@@ -97,7 +97,7 @@ p{
 .currpage a{
   /* color: black; */
   padding: 5px;
-  border: #EC1D24 5px solid;
+  border: #EC1D24 3px solid;
   /* animation: grow-shrink 2s infinite; */
 }
 
@@ -155,10 +155,10 @@ p{
     grid-column: 1 / -1;
     max-height: 450px;
     overflow:hidden;
-    justify-content: center;
+    /* justify-content: center;
     align-items: center;
     align-content: center;
-    align-self: center;
+    align-self: center; */
   }
 
 .p1, .p1-image{
@@ -178,11 +178,10 @@ p{
 }
 
 .text{
-    background-color: rgb(245, 245, 245, 0.5);
+    background-color: rgb(245, 245, 245, 0.75);
     font-family: Helvetica, sans-serif;
     border: 5px solid black;
     padding: 25px;
-    /*Your code here:*/
     align-self: center;
   }
 
@@ -222,6 +221,21 @@ p{
   padding: 10px 10px;
 }
 
+.heroes-text img{
+  width: 90%;
+
+  display: block;
+  margin: 0 auto;
+
+  border: black 4px solid;
+  border-radius: 10px;
+}
+
+.hero_links {
+  color: maroon;
+  text-decoration: maroon underline solid;
+}
+
 .villain_links {
   color: maroon;
   text-decoration: maroon underline solid;
@@ -247,7 +261,7 @@ p{
 }
 
 .villains-list img{
-  width: 75%;
+  width: 80%;
 
   display: block;
   margin: 0 auto;
@@ -269,7 +283,7 @@ p{
 }
 
 .hela-img{
-  border: silver solid 5px;
+  border: #515455 solid 5px;
   border-radius: 10px;
 }
 
