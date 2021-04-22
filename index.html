@@ -19,6 +19,7 @@
 		<title>Home - MCU</title>
 	</head>
 	<body>
+		<div class="skip"><a href=#main>Skip to Main Content</a></div>
 		<header>
 			<nav>
 				<ul>
@@ -30,21 +31,42 @@
 				</ul>
 			</nav>
 
-			<h1>The Marvel Cinematic Universe</h1>
+			<h1 id="main">The Marvel Cinematic Universe</h1>
 
 		</header>
 
 		<main>
 
 			<div class="home-image">
-				<img src="images/landing.png" alt=""/>
+				<!-- <img src="images/landing.png" alt=""/> -->
 			</div>
 
 			<div class="home-text" >
 				<p>Welcome to my portfolio about the Marvel Cinematic Universe!</p>
 				<p>Explore the history of the MCU, fascinating fictional locations, exciting characters and the future of the MCU.</p>
+				<p> I hope you enjoy this site! If you have any feedback, please use the form below.</p>
 			</div>
 
+			<form action="https://formspree.io/f/xknkgpdv" method="POST" >
+				<fieldset>
+				  <legend>
+					  <h2>Feedback Form</h2>
+					</legend>
+				  <div class="form_container">
+					  <div class="labels">
+						<label for="fullname">Your Name</label>
+						<label for="email">Your Email</label>
+						<label for="msg">Leave a Message</label>
+					  </div>
+					<div class="inputs">
+						<input type="text" name="name" id="fullname" placeholder="Enter Your Name"><br>
+						<input type = "email" name="email" id="email" placeholder="Enter Your Email"><br>
+						<textarea id="msg" name="msg" placeholder="Enter your message"></textarea><br>
+					</div>
+				  </div>
+				  <input class="submit" type="submit"></input>
+				</fieldset>
+			</form>
 		</main>
 
 		<footer>

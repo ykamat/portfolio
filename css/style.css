@@ -40,11 +40,16 @@ nav{
 }
 
 footer{
+  position: relative;
   background-color: black;
   font-family: Helvetica, times;
   color: #EC1D24;
   padding: 20px 0;
   text-align: center;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
 }
 
 header p{
@@ -70,6 +75,43 @@ p{
   padding: 0px 10px;
   }
 
+legend {
+  font-size: larger;
+  text-decoration: solid black;
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+
+textarea, input{
+    font-family: 'Roboto Condensed', Helvetica, sans-serif;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.labels{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+
+.submit {
+  margin-bottom: 10px;
+}
 .skip a{
     background: #EC1D24;
     left: 0;
@@ -97,31 +139,39 @@ p{
   /* color: black; */
   padding: 5px;
   border: #EC1D24 3px solid;
-  /* animation: grow-shrink 2s infinite; */
+  /* animation: grow-shrink 2s; */
 }
 
 @-webkit-keyframes grow-shrink{
   /*Your code here.*/
   0% {font-size: medium;}
-  50% {font-size: larger;}
-  100% {font-size: medium;}
+  100% {font-size: larger;}
 }
 
 @keyframes grow-shrink{
   /*Your code here.*/
   0% {font-size: medium;}
-  50% {font-size: larger;}
-  100% {font-size: medium;}
+  100% {font-size: larger;}
 }
 
 /* Index */
 
-.home-image img{
+/* .home-image img{
   width: 95%;
   border: black 3px solid; 
   border-radius: 15px;
   display: block;
   margin: 0 auto;
+} */
+
+.home-image {
+  border: black 3px solid;
+  border-radius: 15px;
+  background-clip: border-box;
+  background: url("../images/landing.png") no-repeat center;
+  background-size: contain;
+  width: 98%;
+  height: 134px;
 }
 
 .home-text{
@@ -133,6 +183,9 @@ p{
   padding: 10px 7.5px;
 }
 
+.form_container {
+  margin: 0 auto;
+}
 /*History*/
 
 .container{
@@ -150,10 +203,6 @@ p{
     grid-column: 1 / -1;
     max-height: 450px;
     overflow:hidden;
-    /* justify-content: center;
-    align-items: center;
-    align-content: center;
-    align-self: center; */
   }
 
 .p1, .p1-image{
@@ -188,15 +237,16 @@ p{
 .gallery > img{
   width: 90%;
   border: 5px solid black;
-
+  filter: grayscale(75%);
   display: block;
   margin: 0 auto;
 }
 
 .gallery img:hover{
   /* border: 10px solid black; */
-  filter: sepia(0%);
+  filter: grayscale(0%);
 }
+
 .gallery p{
   text-align: center;
   padding-top: 10px;
@@ -287,7 +337,6 @@ p{
   border-radius: 10px;
 }
 
-
 @media all and (min-width: 768px) and (max-width: 1024px){
 
   p {
@@ -305,6 +354,210 @@ p{
   nav li {
     font-size: 25px;
     flex: 3;
+  }
+
+  .home-image {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 400px;
+    
+    margin-bottom: 25px;
+  
+
+    background-image: url("../images/landing.png");
+    background-repeat: no-repeat;
+  }
+  .form_container {
+    justify-content: center;
+  }
+  .labels {
+    margin-right: 10px;
+  }
+  .inputs {
+    margin-left: 10px;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    grid-template-rows: auto auto auto auto;
+    grid-row-gap: 20px;
+  }
+  .p1, .p3{
+    grid-column: 1;
+  }
+
+  .p2, .p4{
+    grid-column: 4;
+  }
+
+  .p1-image, .p2-image, .p3-image, .p4-image{
+    grid-column: 1 / -1;
+    max-height: 450px;
+    overflow:hidden;
+  }
+
+  .p1, .p1-image{
+      grid-row: 1 / span 1;
+  }
+
+  .p2, .p2-image{
+      grid-row: 2 / span 1;
+  }
+
+  .p3, .p3-image{
+      grid-row: 3 / span 1;
+  }
+
+  .p4, .p4-image{
+      grid-row: 4 / span 1;
+  }
+
+  .text{
+      background-color: rgb(245, 245, 245);
+      font-family: Helvetica, sans-serif;
+      border: 5px solid black;
+      padding: 25px;
+      align-self: center;
+    }
+
+  #av1, #av2, #gotg, #loki, #ultron, #killmonger, #hela, #thanos{
+    padding-bottom: 10px;
+  }
+
+  #top-text1, #top-text2, #top-text3{
+    padding-top: 20px;
+  }
+
+  .flip-card {
+    background-color: transparent;
+    width: 80%;
+    height: 80%;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    align-content: center;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 80%;
+    height: 90%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .flip-card-inner:hover {
+    transform: rotateY(180deg);
+  }
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .flip-card-front img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Style the back side */
+  .flip-card-back {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+
+  .flip-card-back a{
+    color: red;
+    text-decoration: red underline solid;
+  }
+}
+
+@media all and (min-width: 1024px){
+  h1 h2 {
+    font-size: larger;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  nav li {
+    font-size: 25px;
+    flex: 3;
+  }
+
+  p {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    padding: 0px 10px;
+    font-size: larger;
+    }
+
+  .home-image {
+    background-attachment: fixed; /* Parallax effect */
+    background-position: center;  /* Parallax effect */
+    background-repeat: no-repeat; /* Parallax effect */
+    background-size: cover;       /* Parallax effect */
+    color: white;
+    width: 100%;
+    height: 400px;
+    padding-left: 20px;
+    /*Req 6a*/
+    /*Set margin */
+    margin-bottom: 25px;
+  
+    /*Req 6b*/
+    /*Set background-image to header.jpg */
+    background-image: url("../images/landing.png");
+    background-repeat: no-repeat;
+
+    border: none; 
+    border-radius: 0px;
+  }
+
+  .form_container {
+    justify-content: center;
+  }
+  .labels {
+    margin-right: 10px;
+  }
+  .inputs {
+    margin-left: 10px;
+  }
+
+  /* History */
+  .p1-image, .p2-image, .p3-image, .p4-image{
+    grid-column: 1 / -1;
+    max-height: 450px;
+    object-fit: contain;
+    overflow:hidden;
   }
 
   .container{
@@ -343,23 +596,75 @@ p{
       grid-row: 4 / span 1;
   }
 
-  .text{
-      background-color: rgb(245, 245, 245, 0.75);
-      font-family: Helvetica, sans-serif;
-      border: 5px solid black;
-      padding: 25px;
-      align-self: center;
-    }
-
-  #av1, #av2, #gotg, #loki, #ultron, #killmonger, #hela, #thanos{
-    padding-bottom: 10px;
+  /* Villains */
+  .flip-card {
+    background-color: transparent;
+    width: 80%;
+    height: 80%;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    align-content: center;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 80%;
+    height: 90%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .flip-card-inner:hover {
+    transform: rotateY(180deg);
+  }
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+    display: block;
+    margin: 0 auto;
   }
 
-  #top-text1, #top-text2, #top-text3{
-    padding-top: 20px;
+  .flip-card-front img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Style the back side */
+  .flip-card-back {
+    background-color: rgba(0, 0, 0);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  .flip-card-back p{
+    padding: 0 50px;
+  }
+  .flip-card-back a{
+    color: red;
+    text-decoration: red underline solid;
   }
 }
-
 
 @media screen and (prefers-reduced-motion: reduce){
     html{
