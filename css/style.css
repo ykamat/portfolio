@@ -33,7 +33,6 @@ nav li{
 }
 
 nav{
-  /* background-color:#EC1D24; */
   background-color:black;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -49,7 +48,6 @@ footer{
   width: 100%;
   left: 0;
   bottom: 0;
-  overflow: hidden;
 }
 
 header p{
@@ -119,59 +117,31 @@ textarea, input{
     -webkit-transition: top 1s ease-out;
     transition: top 1s ease-out;
     z-index: 1;
-  
-    /*Your code here*/
     position: absolute;
     background-color: beige;
     top: -50px;
   }
 
 .skip a:focus{
-    /*Your code here*/
     top: 10px;
     position: static;
   }
-/* .currpage{
-  background-color: #EC1D24;
-} */
 
 .currpage a{
-  /* color: black; */
   padding: 5px;
   border: #EC1D24 3px solid;
-  /* animation: grow-shrink 2s; */
-}
-
-@-webkit-keyframes grow-shrink{
-  /*Your code here.*/
-  0% {font-size: medium;}
-  100% {font-size: larger;}
-}
-
-@keyframes grow-shrink{
-  /*Your code here.*/
-  0% {font-size: medium;}
-  100% {font-size: larger;}
 }
 
 /* Index */
-
-/* .home-image img{
-  width: 95%;
-  border: black 3px solid; 
-  border-radius: 15px;
-  display: block;
-  margin: 0 auto;
-} */
 
 .home-image {
   border: black 3px solid;
   border-radius: 15px;
   background-clip: border-box;
   background: url("../images/landing.png") no-repeat center;
-  background-size: contain;
+  background-size: cover;
   width: 98%;
-  height: 134px;
+  height: 150px;
 }
 
 .home-text{
@@ -186,6 +156,7 @@ textarea, input{
 .form_container {
   margin: 0 auto;
 }
+
 /*History*/
 
 .container{
@@ -243,7 +214,6 @@ textarea, input{
 }
 
 .gallery img:hover{
-  /* border: 10px solid black; */
   filter: grayscale(0%);
 }
 
@@ -287,31 +257,34 @@ textarea, input{
 }
 
 /* Villains */
-.villains-text{
+
+.flip-card-back{
   text-align: center;
 }
 
 .villains-text p{
   padding: 10px 10px;
-}
-
-.villains-list h2{
   text-align: center;
-  padding-top: 20px;
 }
 
-.villains-list p{
+.flip-card-back h2{
+  text-align: center;
+  padding-top: 10px;
+}
+
+.flip-card-back p{
   text-align: center;
   padding: 10px;
 }
 
-.villains-list img{
+.flip-card-front img{
   width: 80%;
-
   display: block;
   margin: 0 auto;
 }
-
+.flip-card-front {
+  padding-top: 10px;
+}
 .loki-img{
   border: green solid 5px;
   border-radius: 10px;
@@ -363,12 +336,8 @@ textarea, input{
     background-size: cover;
     color: white;
     height: 400px;
-    
-    margin-bottom: 25px;
-  
 
-    background-image: url("../images/landing.png");
-    background-repeat: no-repeat;
+    margin-bottom: 25px;
   }
   .form_container {
     justify-content: center;
@@ -435,14 +404,12 @@ textarea, input{
     background-color: transparent;
     width: 80%;
     height: 80%;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
     align-content: center;
     display: block;
     margin: 0 auto;
   }
-  
-  /* This container is needed to position the front and back side */
+
   .flip-card-inner {
     position: relative;
     width: 80%;
@@ -453,22 +420,18 @@ textarea, input{
     display: block;
     margin: 0 auto;
   }
-  
-  .flip-card-inner:hover {
-    transform: rotateY(180deg);
-  }
-  /* Position the front and back side */
+
   .flip-card-front, .flip-card-back {
+    display: block;
+    margin: 0 auto;
     position: absolute;
     width: 100%;
     height: 90%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    display: block;
-    margin: 0 auto;
+    padding-top: 0px;
   }
-  
-  /* Style the front side (fallback if image is missing) */
+
   .flip-card-front {
     background-color: #bbb;
     color: black;
@@ -481,7 +444,7 @@ textarea, input{
     height: 100%;
     object-fit: cover;
   }
-  /* Style the back side */
+
   .flip-card-back {
     background-color: rgba(0, 0, 0, 0.75);
     color: white;
@@ -490,6 +453,10 @@ textarea, input{
     flex-direction: column;
     justify-content: center;
     padding-bottom: 20px;
+  }
+
+  .flip-card-inner:hover {
+    transform: rotateY(180deg);
   }
 
   .flip-card-back a{
@@ -514,6 +481,23 @@ textarea, input{
     flex: 3;
   }
 
+  nav a:hover{
+    /* color: goldenrod; */
+    text-decoration: underline;
+    animation: change-color 3s infinite;
+  }
+
+  @-webkit-keyframes change-color{
+    0% {color: #EC1D24;}
+    50% {color: goldenrod;}
+    100% {color: #EC1D24;}
+  }
+
+  @keyframes change-color{
+    0% {color: #EC1D24;}
+    50% {color: goldenrod;}
+    100% {color: #EC1D24;}
+  }
   p {
     font-family: 'Roboto', Helvetica, sans-serif;
     padding: 0px 10px;
@@ -521,24 +505,15 @@ textarea, input{
     }
 
   .home-image {
-    background-attachment: fixed; /* Parallax effect */
-    background-position: center;  /* Parallax effect */
-    background-repeat: no-repeat; /* Parallax effect */
-    background-size: cover;       /* Parallax effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     width: 100%;
     height: 400px;
-    padding-left: 20px;
-    /*Req 6a*/
-    /*Set margin */
     margin-bottom: 25px;
-  
-    /*Req 6b*/
-    /*Set background-image to header.jpg */
-    background-image: url("../images/landing.png");
-    background-repeat: no-repeat;
-
-    border: none; 
+    border: none;
     border-radius: 0px;
   }
 
@@ -602,13 +577,12 @@ textarea, input{
     width: 80%;
     height: 80%;
     border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
     align-content: center;
     display: block;
     margin: 0 auto;
   }
-  
-  /* This container is needed to position the front and back side */
+
   .flip-card-inner {
     position: relative;
     width: 80%;
@@ -619,27 +593,27 @@ textarea, input{
     display: block;
     margin: 0 auto;
   }
-  
-  .flip-card-inner:hover {
+
+  .flip-card-inner:hover, .flip-card-inner:focus {
     transform: rotateY(180deg);
   }
-  /* Position the front and back side */
+
   .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 90%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     display: block;
     margin: 0 auto;
   }
-  
-  /* Style the front side (fallback if image is missing) */
+
   .flip-card-front {
     background-color: #bbb;
     color: black;
     display: block;
     margin: 0 auto;
+    padding-top: 0px;
   }
 
   .flip-card-front img{
@@ -647,7 +621,7 @@ textarea, input{
     height: 100%;
     object-fit: cover;
   }
-  /* Style the back side */
+
   .flip-card-back {
     background-color: rgba(0, 0, 0);
     color: white;
@@ -668,13 +642,34 @@ textarea, input{
 
 @media screen and (prefers-reduced-motion: reduce){
     html{
-        scroll-behavior: auto; /* Removes scroll animation */
+        scroll-behavior: auto;
+    }
+
+    nav a:hover{
+      color: goldenrod;
+      text-decoration: underline;
+      animation: none;
     }
 
     .skip a{
-      -webkit-transition: none; /* sets to default setting */
-      transition: none;        /* sets to default setting */
+      -webkit-transition: none;
+      transition: none;
      }
+
+     .home-image {
+      background-attachment: local;
+      width: 97%;
+      border: black solid 5px;
+      border-radius: 15px;
+    }
+
+    .flip-card {
+      perspective: 0px;
+    }
+
+    .flip-card-inner {
+      transition: transform 0.0000001s;
+    }
 
     /*Turn off parallax*/
     header{
